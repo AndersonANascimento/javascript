@@ -10,7 +10,6 @@ console.log(subtrai);
 var soma = function(a, b) {
 	 return a + b; 
 };
-
 console.log(soma);
 console.log(soma(2, 2));
 
@@ -28,7 +27,6 @@ var formulaImpostoB = function(preco) { return preco * 0.2; };
 var calcularPreco = function (produto, formulaImposto) {
 	return produto.preco + formulaImposto(produto.preco);
 };
-
 console.log(calcularPreco(produto, formulaImpostoA));
 console.log(calcularPreco(produto, formulaImpostoB));
 
@@ -38,7 +36,6 @@ var helloWorld = function () {
 		return "Hello World!";
 	};
 };
-
 console.log(helloWorld);
 console.log(helloWorld());
 console.log(helloWorld()());
@@ -91,7 +88,6 @@ var criarPessoa = function (nome, idade) {
 	 	idade: idade
 	 } ;
 };
-
 console.log(criarPessoa("Pedro", 20));
 console.log(criarPessoa("Maria", 30));
 
@@ -100,7 +96,6 @@ var Pessoa = function (nome, idade) {
 	 this.nome = nome;
 	 this.idade = idade; 
 };
-
 console.log(new Pessoa("Pedro", 20));
 console.log(new Pessoa("Maria", 30));
 
@@ -121,6 +116,5 @@ var helloWorld = function () {
 		return message; // mantem a referencia da variavel externa
 	};
 };
-
 var fnHelloWorld = helloWorld();
 console.log(fnHelloWorld());

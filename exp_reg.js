@@ -17,12 +17,12 @@ var regExp = /\(48\) 9999-9999/;	// literal
 var telefone = "O telefone é (48) 9999-9999, tratar com João";
 console.log(regExp.test(telefone)); // true
 
-//Exemplo 3
+//Exemplo 3 - Caracteres especiais
 var regExp = /^\(48\) 9999-9999$/;	// literal
 var telefone = "(48) 9999-9999";
 console.log(regExp.test(telefone)); // true
 
-//Exemplo 4 -
+//Exemplo 4 - Grupos de caracteres
 var regExp = /^\([0-9][0-9]\) [0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$/;	// literal
 var telefone = "(80) 9876-1234";
 console.log(regExp.test(telefone)); // true
@@ -54,17 +54,20 @@ var regExp = /^\(\d{2}\)\s\d{4,5}-?\d{4}$/;	// literal
 var telefone = "(80) 998761234";
 console.log(regExp.test(telefone)); // true
 
-//Exemplo 10
+//Exemplo 10 - String API
+console.log("Exempleo 10");
 var regExp = /\(\d{2}\)\s\d{4,5}-?\d{4}/;	// literal
 var telefone = "<table><tr><td>(80) 999778899</td><td>(90) 99897-8877</td><td>(70) 98767-9999</td></tr></table>";
 console.log(telefone.match(regExp)); // true
 
 //Exemplo 11 - Modificadores (i, g, m)
+console.log("Exempleo 11");
 var regExp = /\(\d{2}\)\s\d{4,5}-?\d{4}/g;	// literal
 var telefone = "<table><tr><td>(80) 999778899</td><td>(90) 99897-8877</td><td>(70) 98767-9999</td></tr></table>";
 console.log(telefone.match(regExp)); // true
 
 //Exemplo 12
+console.log("Exempleo 12");
 var regExp = /\(\d{2}\)\s\d{4,5}-?\d{4}/g;	// literal
 var telefone = "<table><tr><td>(80) 999778899</td><td>(90) 99897-8877</td><td>(70) 98767-9999</td></tr></table>";
 console.log(telefone.replace(regExp, "telefone")); // true

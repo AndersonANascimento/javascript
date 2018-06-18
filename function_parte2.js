@@ -4,6 +4,7 @@
  */
 
 // ALERTA! Cuidado com o escopo Global
+console.log('*** Escopo global ***');
 var counter = 0;
 var add = function () {
     return ++counter;
@@ -25,6 +26,7 @@ console.log(add());
 
 // Utilizando encapsulamento com Objetos - possui fragilidades
 // permite acessar diretamente 'value' podendo introduzir problemas
+console.log('*** Objetos ***');
 var counter = {
     value: 0,
     add: function () {
@@ -51,6 +53,7 @@ counter.value = undefined; // acesso indevido ao conteudo do objeto
 console.log(counter.add());
 
 // Reescrevendo com Factory Function
+console.log('*** Factory Function ***');
 var createCounter = function () {
     var value = 0;
     return {
@@ -59,14 +62,28 @@ var createCounter = function () {
         }
     };
 };
+var counter = createCounter();
+console.log(counter.value);
+console.log(counter.add());
+console.log(counter.add());
+console.log(counter.add());
+
 // ou com Constructor Function
+console.log('*** Constructor Function ***');
 var Counter = function () {
     var value = 0;
     this.add = function () {
         return ++value;
     };
 };
+var counter = new Counter();
+console.log(counter.value);
+console.log(counter.add());
+console.log(counter.add());
+console.log(counter.add());
+
 // ou com IIFE - Immediately-Invoked Function Expression (Module Pattern)
+console.log('*** IIFE - Module Pattern ***');
 var counter = (function () {
     var _value = 0;
     var _add = function () {
@@ -80,19 +97,9 @@ var counter = (function () {
         reset: _reset
     };
 })();
-
-var counter1 = createCounter();
-var counter2 = new Counter();
-
 console.log(counter.value);
 console.log(counter.add());
 console.log(counter.add());
 console.log(counter.add());
 counter.reset();
 console.log(counter.add());
-
-console.log(counter1.value);
-console.log(counter1.add());
-
-console.log(counter2.value);
-console.log(counter2.add());

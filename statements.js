@@ -46,6 +46,9 @@ try {
 try {
     console.log(toHackerCase(10));
 } catch (e) {
-    console.log("Error: " + e.message + " " + e.name);
+    if (e instanceof HackerTextError)
+        console.log("Error: " + e.message + " " + e.name);
+    else
+        console.log(e.name + ": " + e.message);
 }
 console.log(toHackerCase(texto));
