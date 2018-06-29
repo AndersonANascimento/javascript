@@ -1,0 +1,34 @@
+{
+	"winada": [
+		{"tamanho":  4, "tipo": "A", "valor": "", "nome": "rcode"}, 
+		{"tamanho": 60, "tipo": "A", "valor": "", "nome": "msg"}
+	],
+	"entrada": [
+		{"tamanho":  1, "tipo": "A", "valor": "", "nome": "tipo"},
+		{"tamanho":  2, "tipo": "N", "valor": "", "nome": "visao"},
+		{"tamanho": 11, "tipo": "N", "valor": "", "nome": "cpf"},
+		{"tamanho":  8, "tipo": "A", "valor": "", "nome": "senhaservidor"},
+		{"tamanho":  2, "tipo": "N", "valor": "", "nome": "mmCcheque"},
+		{"tamanho":  4, "tipo": "N", "valor": "", "nome": "aaCcheque"},
+		{"tamanho": 60, "tipo": "A", "valor": "", "nome": "nomeDsn"}
+	],
+ 	"erro": [
+		{"tamanho": 60, "tipo": "A", "valor": "", "nome": "msgErro"},
+		{"tamanho":  4, "tipo": "A", "valor": "", "nome": "codErro"} 
+	],
+	"saida":  [
+		{"tamanho": 60, "tipo": "A", "valor": "", "nome": "nomeServidor"},
+		{"tamanho":  2, "tipo": "N", "valor": "", "nome": "qtdLotacao"},
+		{"tamanho":  2, "tipo": "N", "valor": "", "nome": "qtdMatricula"},
+		{"tamanho": 96, "tipo": "P", "ocorr": 50, "nome": "tbLotacoes", "def": [[
+				{"tamanho":  9, "tipo": "A", "valor": "", "nome": "numSeqMat"},
+				{"tamanho":  1, "tipo": "A", "valor": "", "nome": "digMatricula"},
+				{"tamanho": 15, "tipo": "A", "valor": "", "nome": "siglaOrgao"},
+				{"tamanho":  2, "tipo": "A", "valor": "", "nome": "tipoFolha"},
+				{"tamanho": 30, "tipo": "A", "valor": "", "nome": "descTipoFolha"},
+				{"tamanho": 35, "tipo": "A", "valor": "", "nome": "cargo"},
+				{"tamanho":  4, "tipo": "A", "valor": "", "nome": "nomeSistema"}
+			]]
+		}
+	]
+}

@@ -38,9 +38,9 @@ let cfppaps1 = {
 // const strOut = '0000Mensagem de erro WinADA                                     T0145612536291SECRETA 052018NOME DSN                                                    Mensagem de erro Natural                                    9999Anderson Abreu do Nascimento                                0102';
 const strOut = '                                                                A9903480950230SECRETA 122017AMAZONPREV                                                                                                                  MARIA DA CONCEICAO DANTAS DA SILVA                          020101000009B4AMAZONPREV     2213.SAL INTEGRAL               AUDITOR FISCAL DE TRIB.EST.2A.CL.IVCFPP01000009B4AMAZONPREV     10MENSAL                        AUDITOR FISCAL DE TRIB.EST.2A.CL.IVCFPP                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ';
 
-let parseJson = function(conteudo, parameter) {
-    let tamConteudo = conteudo.length;
-    console.log(`tamConteudo: ${tamConteudo}`);
+let parseJson = function(dados, parameter) {
+    let tamDados = dados.length;
+    console.log(`tamDados: ${tamDados}`);
     let pos = 0;
     let resJson = {};
     for(var propNvl1 in parameter) {
@@ -51,7 +51,7 @@ let parseJson = function(conteudo, parameter) {
             let posNvl2 = pos;
             propNvl2.forEach(element => {
                 if(!Array.isArray(element)) {                   
-                    let valor = conteudo.substr(posNvl2, element.tamanho);
+                    let valor = dados.substr(posNvl2, element.tamanho);
                     switch (element.tipo) {
                         case 'A':
                             valor = valor.trim();
@@ -70,9 +70,9 @@ let parseJson = function(conteudo, parameter) {
                             // let vet = [];
                             valor = [];
                             for (let i = 1; i < element.ocorr; i++) {
-                                let subConteudo = conteudo.substr(posNvl3, element.tamanho);
-                                if(subConteudo.trim().length === 0) break;
-                                let arr = parseJson(subConteudo, element.def);
+                                let subdados = dados.substr(posNvl3, element.tamanho);
+                                if(subdados.trim().length === 0) break;
+                                let arr = parseJson(subdados, element.def);
                                 // console.log(arr);
                                 valor.push(arr['0']);
                                 posNvl3 += element.tamanho;
@@ -98,7 +98,7 @@ let parseJson = function(conteudo, parameter) {
 
 let retornoJson = parseJson(strOut, cfppaps1);
 
-console.log(cfppaps1);
+console.dir(cfppaps1);
 // console.log(`MSG: ${retornoJson.winada.msg}`);
 // console.log(`CPF: ${retornoJson.entrada.cpf}`);
 // console.log(`LOTACOES: ${retornoJson.saida.tbLotacoes['0'].descTipoFolha}`);

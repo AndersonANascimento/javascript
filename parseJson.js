@@ -107,6 +107,8 @@ let parseJson = function(conteudo, parameter) {
     return resJson;
 }
 
+console.log(cfppaps1);
+
 let retornoJson = parseJson(strOut, cfppaps1);
 
 console.log(retornoJson);
